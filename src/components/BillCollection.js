@@ -1,12 +1,18 @@
-import React, {useState, useEffect} from 'react';
+import React from 'react';
+import BillCard from './BillCard'
 
-export default function BillCollection() {
+
+export default function BillCollection({bills, handleClick, dischargeBill}) {
   // Your code here
+  
 
   return (
     <div className="ui four column grid">
       <div className="row">
-        {/*...and here..*/}
+        {bills.map((bill) => (
+          <BillCard key={bill.id} bill={bill} handleClick={handleClick} dischargeBill={dischargeBill}/>
+        ) )}
+       
       </div>
     </div>
   );
